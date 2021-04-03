@@ -5,7 +5,7 @@ end
 
 def shift_box (shift_1)
   puts "вижміть педаль щеплення"
-  puts "на корбці переlач увімкніть  #{shift_1}"
+  puts "на корбці переlач увімкнули  #{shift_1}"
   puts "#{shift_1} увімкнулась !"
 end
 
@@ -21,6 +21,7 @@ def use_headlights (brightness)
 
 sound_horn
 accelerate
-shift_box ("перша передача")
+puts "Яку передачу хочете увімкнути?"
+gear = gets
+shift_box ("#{gear} передачу".to_s)
 use_headlights ("бижнє світло фар")
-
