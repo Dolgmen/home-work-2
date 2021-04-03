@@ -1,6 +1,8 @@
-def mileage (miles_driven,gas_used) #,blue_used )
-   miles_driven / gas_used
-   #  miles_driven / blue_used
+def milage (miles_driven,gas_used)
+  if gas_used == 0
+    return 0.0
+  end
+  miles_driven / gas_used
 end
 
 #attr_reader :miles
@@ -16,3 +18,4 @@ puts "середній розхід #{lifetime_milage} літр"
 
 #ifetime55 = mileage2(11432,115)
 #puts "середній розхід #{ifetime55 } літр"
+
