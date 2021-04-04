@@ -1,5 +1,5 @@
 class Animals
-  attr_accessor :name , :age
+  attr_reader :name , :age
   def name=(value)
     if value == ""
       raise "name dont enter"
@@ -10,13 +10,14 @@ class Animals
     if value < 0
       raise " age #{value} is not correct"
     end
-    @age=value
+    @age = value
   end
 
   def talk
-    puts "#{@name}"
+    puts "#{@name} says"
   end
-  def move ( destenation)
+  def move ( destenation )
+    puts "#{@name} unrolls!"
     puts "#{@name} runing to the #{destenation}"
   end
   def eat (easter)
@@ -39,7 +40,10 @@ class Dog < Animals
 end
 
 class Bird <Animals
-
+  attr_accessor :age
+  def talk
+  puts "#{@name} says Chirp! Chirp!"
+  end
 end
 
 jacob = Dog.new
@@ -49,19 +53,19 @@ jacob.eat ("kripiv on forest")
 jacob.talk
 jacob.age= "18"
 jacob.report_age
-#muhtar = Dog.new
-#muhtar.name = ("sherlok")
-#muhtar.move ("to genius")
-#muhtar.age = "55"
-#muhtar.report_age
-#klar = Bird.new
-#klar.name =""
-#klar .eat "protein"
-#klar.age= "-15"
-#klar.report_age
-#loj = Cat.new
-#loj.name = "jo"
-#loj.eat"promedol"
-#loj.move "linkil"
-#loj.age= 55
-#loj.report_age
+muhtar = Dog.new
+muhtar.name = ("sherlok")
+muhtar.move ("to genius")
+muhtar.age = "55"
+muhtar.report_age
+klar = Bird.new
+klar.name =" goga"
+klar .eat "protein"
+klar.age= 5
+klar.report_age
+loj = Cat.new
+loj.name= "jo"
+loj.eat"promedol"
+loj.move "linkil"
+loj.age= 5
+loj.report_age
