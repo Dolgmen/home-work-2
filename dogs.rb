@@ -2,9 +2,13 @@
 
 
 class Bird
-  def name_metod
-    @name=gets
+  def name=(new_value)
+    @name = new_value
   end
+  def name
+    @name
+  end
+
   def talk
     puts "#{@name}curlyk- curlyk"
   end
@@ -14,27 +18,45 @@ class Bird
   def eat (easter)
     puts "#{@name}{ eat some #{easter}"
   end
+  def age=(new_value)
+    @age = new_value
+  end
+  def age
+    @age
+  end
+  def report_age
+    puts "#{@name} is #{@age} years old"
+  end
 end
 
 class Dog
-  def name_metod
-    incommyng = gets
-    @name2= incommyng
+  # def name_metod
+  # incommyng = gets
+  # @name2= incommyng
+  #end
+  def name= (new_value)
+    @name = new_value
+  end
+  def name
+    @name
   end
   def talk
-    puts "#{@name2} gav gav"
+    puts "#{@name} gav gav"
   end
   def move ( destenation )
-    puts " #{@name2} runing to the #{destenation}"
+    puts " #{@name} runing to the #{destenation}"
   end
-  def make_age
-    @age = gets
+  def age=(new_value)
+    @age = new_value
+  end
+  def age
+    @age
   end
   def report_age
-    puts "#{@name2} is #{@age} years old"
+    puts "#{@name} is #{@age} years old"
   end
   def eat (easter)
-    puts "#{@name2} eat some #{easter}"
+    puts "#{@name} eat some #{easter}"
   end
 end
 
@@ -50,12 +72,22 @@ class Cat
   end
 end
 
-print "what name dog? "
+#print "what name dog? "
 jacob = Dog.new
-jacob.name_metod
+jacob.name = "alexandr"
 jacob.move ("brawler")
 jacob.eat ("kolonka")
 jacob.talk
-print " how old ?"
-jacob.make_age
+#print " how old ?"
+jacob.age= "3"
 jacob.report_age
+muhtar = Dog.new
+muhtar.name = ("sherlok")
+muhtar.move ("to genius")
+muhtar.age = "55"
+muhtar.report_age
+klar = Bird.new
+klar.name ="alphonso"
+klar .eat "protein"
+klar.age= "15"
+klar.report_age
