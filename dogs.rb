@@ -62,6 +62,20 @@ end
 
 class Cat
   attr_accessor :name , :age
+  def name=(value)
+    if value == ""
+      puts "name cant enter on string"
+    else
+      @name = value
+    end
+  end
+  def age=(value)
+    if value < 0
+      puts " age #{value} is not correct"
+    else
+      @agw=value
+    end
+  end
   def talk
     puts "#{@name}myau myau"
   end
@@ -91,13 +105,13 @@ muhtar.move ("to genius")
 muhtar.age = "55"
 muhtar.report_age
 klar = Bird.new
-klar.name ="alphonso"
+klar.name =""
 klar .eat "protein"
-klar.age= "15"
+klar.age= "-15"
 klar.report_age
 loj = Cat.new
-loj.name = "local"
+loj.name = ""
 loj.eat"promedol"
 loj.move "linkil"
-loj.age =85
+loj.age =-85
 loj.report_age
