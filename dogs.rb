@@ -61,6 +61,7 @@ class Dog
 end
 
 class Cat
+  attr_accessor :name , :age
   def talk
     puts "#{@name}myau myau"
   end
@@ -69,6 +70,9 @@ class Cat
   end
   def eat (easter)
     puts "#{@name} eat some #{easter}"
+  end
+  def report_age
+    puts "#{@name} is #{@age} years old"
   end
 end
 
@@ -91,3 +95,9 @@ klar.name ="alphonso"
 klar .eat "protein"
 klar.age= "15"
 klar.report_age
+loj = Cat.new
+loj.name = "local"
+loj.eat"promedol"
+loj.move "linkil"
+loj.age =85
+loj.report_age
