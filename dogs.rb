@@ -2,56 +2,60 @@
 
 
 class Bird
-  def talk
-    puts "curlyk- curlyk"
+  def name_metod
+    @name=gets
   end
-  def move (destenation)
-    puts " flying to the #{destenation}"
+  def talk
+    puts "#{@name}curlyk- curlyk"
+  end
+  def move (destenation )
+    puts " #{@name}flying to the #{destenation}"
   end
   def eat (easter)
-    puts "Bird eat some #{easter}"
+    puts "#{@name}{ eat some #{easter}"
   end
 end
 
 class Dog
-  def talk
-    puts "gav gav"
+  def name_metod
+    incommyng = gets
+    @name2= incommyng
   end
-  def move (destenation)
-    puts " runing to the #{destenation}"
+  def talk
+    puts "#{@name2} gav gav"
+  end
+  def move ( destenation )
+    puts " #{@name2} runing to the #{destenation}"
+  end
+  def make_age
+    @age = gets
+  end
+  def report_age
+    puts "#{@name2} is #{@age} years old"
   end
   def eat (easter)
-    puts "Dogs  eat some #{easter}"
+    puts "#{@name2} eat some #{easter}"
   end
 end
 
 class Cat
   def talk
-    puts "myau myau"
+    puts "#{@name}myau myau"
   end
-  def move (destenation)
-    puts " runing to the #{destenation}"
+  def move ( destenation)
+    puts "#{@name} runing to the #{destenation}"
   end
   def eat (easter)
-    puts "Cat  eat some #{easter}"
+    puts "#{@name} eat some #{easter}"
   end
 end
 
+print "what name dog? "
 jacob = Dog.new
-fido = Dog.new
-rex = Dog.new
-fido.talk
-rex.move("foot bowl")
-jacob.talk
+jacob.name_metod
 jacob.move ("brawler")
 jacob.eat ("kolonka")
-jacob = Bird.new
-fido = Bird.new
-rex = Bird.new
-fido.talk
-rex.move("pool")
 jacob.talk
-jordan = Cat.new
-jordan.talk
-jordan.move ("opa-pa")
-jordan.eat ("moloco")
+print " how old ?"
+jacob.make_age
+jacob.report_age
