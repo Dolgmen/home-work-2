@@ -58,21 +58,23 @@ class Puluk < Employee
 end
 
 class Per_hour < Employee
-  attr_reader :hore , :day
+  attr_reader :hore , :day , :name
   def hore= (hore)
-  if hore < 0
-    raise 'enter valid velue'
-  end
+    @hore = hore
   end
   def initialize (name = "Petro", day= 0.0 , hore= 0.0 )
     self.name= name
     self.day= day
+    if day < 0
+      raise 'enter valid velue'
+    end
     self.hore= hore
+    if hore < 0
+      raise 'enter valid velue'
+    end
   end
   def day= (day)
-  if day < 0
-    raise 'enter valid velue'
-  end
+    @day=day
   end
   def print_kvi
     print_name
@@ -94,13 +96,13 @@ end
 # salaried_employee.salary = 45621
 # salaried_employee.print_kvi
 
-  # hourly_employee = Per_hour.new
-  # hourly_employee.name = "John Smith"
-  # hourly_employee.day = 14.97
-  # hourly_employee.hore = 30
-  # hourly_employee.print_k
- hok = Per_hour.new("bascerwil", 18,36)
- hok.print_kvi
+# hourly_employee = Per_hour.new
+# hourly_employee.name = "John Smith"
+# hourly_employee.day = 14.97
+# hourly_employee.hore = 30
+# hourly_employee.print_k
+hok = Per_hour.new("bascerwil", 18,12)
+hok.print_kvi
 
 hok = Puluk.new(37000, "John" )
 hok.print_kvi
