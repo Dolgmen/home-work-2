@@ -16,12 +16,11 @@ end
 class Cat < Animal
   attr_reader :numbers_of_lifes
   def initialize (name ="buartino", age= 42, number_of_lifes= 25 )
-    @name = name
-    @age = age
+    super (name),(age)
     @number_of_lifes = number_of_lifes
   end
   def numbers
-    puts "cat have #{@number_of_lifes} of lifes "
+    puts "cat have #{@number_of_lifes}  lifes "
   end
 end
 #dog = Dog.new
