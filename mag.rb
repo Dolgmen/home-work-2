@@ -1,12 +1,8 @@
 prices =[2.99, 25.00, 9.99]
-index =0
+index = 0
 while index < prices.length
   puts prices [index]
-  index += 1
-end
-index = 0
-while index <= prices.length
-  puts prices [index]
+  index +=1
 end
 # prices[0]
 # prices[1]
