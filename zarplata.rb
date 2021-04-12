@@ -46,7 +46,7 @@ class Puluk < Employee
   attr_reader :salary
   def initialize (salary = 0, name= "Petro")
     self.salary= salary
-    self.name= name
+    super(name)
   end
   def salary=(salary)
     super
@@ -63,7 +63,7 @@ class Per_hour < Employee
     @hore = hore
   end
   def initialize (name = "Petro", day= 0.0 , hore= 0.0 )
-    self.name= name
+    super(name)
     self.day= day
     if day < 0
       raise 'enter valid velue'
@@ -73,10 +73,36 @@ class Per_hour < Employee
       raise 'enter valid velue'
     end
   end
+  attr_reader :hourly_wage, :hours_per_week
+  def hourly_wage=(hourly_wage)
+    if hourly_wage < 0
+      raise "An hourly wage of #{hourly_wage} isn't valid!"
+    end
+    @hourly_wage = hourly_wage
+  end
+  def hours_per_week=(hours_per_week)
+    if hours_per_week < 0
+      raise "#{hours_per_week} hours per week isn't valid!"
+    end
+    @hours_per_week = hours_per_week
+    end
+  def self.secur (name)
+    print_pay_stub.new(name , 19.25 , 30)
+  end
+  def self.casir (name)
+    print_pay_stub.new(name , 12.75 , 25)
+  end
+  def self. kolya (name)
+    print_pay_stub.new(name, 15.45 , 68)
+  end
+   def turn_into_cashier
+     self.hore= 12.75
+     self.day= 25
+   end
   def day= (day)
     @day=day
   end
-  def print_kvi
+  def print_pay_stub
     print_name
     puts format("You have: $%.2f", @day*@hore* 2 )
   end
@@ -101,8 +127,20 @@ end
 # hourly_employee.day = 14.97
 # hourly_employee.hore = 30
 # hourly_employee.print_k
-hok = Per_hour.new("bascerwil", 18,12)
-hok.print_kvi
+# hok = Per_hour.new("bascerwil", 18,12)
+# hok.print_kvi
+#
+# hok = Puluk.new(37000, "John" )
+# hok.print_kvi
+#
+# ivan = Per_hour.new("Ivan Stokes")
+# ivan.turn_into_cashier
+# ivan.print_kvi
 
-hok = Puluk.new(37000, "John" )
-hok.print_kvi
+angela = turn_into_cashier.secur("Angela Matthews")
+edwin = turn_into_cashier.kolya("Edwin Burgess")
+ivan = turn_into_cashier.casir("Ivan Stokes")
+
+angela.print_pay_stub
+edwin.print_pay_stub
+ivan.print_pay_stub
